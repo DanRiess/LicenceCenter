@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+
+  <!-- Load required Bootstrap and BootstrapVue CSS -->
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+  <link type="text/css" rel="stylesheet" href="./style.css" />
+
+  <!-- Load polyfills to support older browsers -->
+  <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous">
+  </script>
+
+  <!-- Load Vue followed by BootstrapVue and Axios -->
+  <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+  <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Load the following for BootstrapVueIcons support -->
+  <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+</head>
+
+<body>
+  <div id='test'>
+
+  </div>
+
+  <div id="company-table">
+    <template>
+      <b-container fluid>
+        <!-- User Interface controls -->
+        <b-row>
+          <b-col lg="6" class="my-1">
+            <b-form-group label="Filter" label-cols-sm="3" label-align-sm="right" label-size="sm"
+              label-for="filterInput" class="mb-0">
+              <b-input-group size="sm">
+                <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Suchbegriff eingeben">
+                </b-form-input>
+                <b-input-group-append>
+                  <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+                </b-input-group-append>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+        </b-row>
+
+        <!-- Main table element -->
+        <b-table show-empty hover small sticky-header="35vh" :items="items" :filter="filter"
+          @row-clicked="companyRowClickHandler">
+        </b-table>
+      </b-container>
+    </template>
+  </div>
+
+  <div id="kunden-table">
+    <template>
+      <b-container fluid>
+        <!-- User Interface controls -->
+        <b-row>
+          <b-col lg="6" class="my-1">
+            <b-form-group label="Filter" label-cols-sm="3" label-align-sm="right" label-size="sm"
+              label-for="filterInput" class="mb-0">
+              <b-input-group size="sm">
+                <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Suchbegriff eingeben">
+                </b-form-input>
+                <b-input-group-append>
+                  <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+                </b-input-group-append>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+        </b-row>
+
+        <!-- Main table element -->
+        <b-table show-empty small sticky-header="35vh" :items="items" :fields="fields" :filter="filter">
+        </b-table>
+      </b-container>
+    </template>
+  </div>
+
+  <div id="licence-table">
+    <template>
+      <b-container fluid>
+        <!-- User Interface controls -->
+        <b-row>
+          <b-col lg="6" class="my-1">
+            <b-form-group label="Filter" label-cols-sm="3" label-align-sm="right" label-size="sm"
+              label-for="filterInput" class="mb-0">
+              <b-input-group size="sm">
+                <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Suchbegriff eingeben">
+                </b-form-input>
+                <b-input-group-append>
+                  <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+                </b-input-group-append>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+        </b-row>
+
+        <!-- Main table element -->
+        <b-table show-empty small sticky-header="45vh" :items="items" :fields="fields" :filter="filter">
+        </b-table>
+      </b-container>
+    </template>
+  </div>
+
+  <script src="test1.js"></script>
+</body>
+
+</html>

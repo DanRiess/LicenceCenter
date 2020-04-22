@@ -1,0 +1,20 @@
+#kunden-table {
+    display: inline-block;
+    width: 55%;
+    margin: 1% 2%;
+    background-color: lightgray;
+    position: absolute;
+}
+
+#company-table {
+    display: inline-block;
+    width: 35%;
+    margin: 1% 2%;
+    background-color: lightgray;
+}
+
+#licence-table {
+    margin: 0 2%;
+    padding: .5% 0;
+    background-color: lightgray;
+}
